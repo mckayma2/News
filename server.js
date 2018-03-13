@@ -3,7 +3,7 @@ var express = require("express");
 var mongojs = require("mongojs");
 var cheerio = require("cheerio");
 var request = require("request");
-
+var port = process.env.PORT || 8080;
 // Initialize Express
 var app = express();
 
@@ -88,7 +88,7 @@ db.news.drop();
 });
 
 
-// Set the app to listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
+//server listening 
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
 });
